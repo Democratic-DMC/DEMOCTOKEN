@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemocToken (DMC)</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a; /* Fondo oscuro */
+            color: #00ffcc; /* Texto azul verdoso */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, #00cc99, #0099cc); /* Degradado verde a azul verdoso */
+            color: #ffffff; /* Texto blanco */
+            padding: 40px 0;
+            box-shadow: 0 4px 6px rgba(0, 204, 153, 0.2); /* Sombra verde */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            text-shadow: 0 0 5px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+        }
+
+        /* Contenedor principal */
+        .container {
+            padding: 20px;
+        }
+
+        /* Tarjeta de información */
+        .info {
+            background: rgba(26, 26, 26, 0.9); /* Fondo oscuro semi-transparente */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 204, 153, 0.2); /* Sombra verde */
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+            backdrop-filter: blur(10px); /* Efecto de desenfoque */
+        }
+
+        .info h2 {
+            color: #00cc99; /* Texto verde */
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+        }
+
+        .info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info ul li {
+            background: rgba(40, 40, 40, 0.8); /* Fondo oscuro semi-transparente */
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 204, 153, 0.1); /* Sombra verde */
+            font-size: 1.1rem;
+            color: #ffffff; /* Texto blanco */
+            transition: all 0.3s ease;
+        }
+
+        .info ul li strong {
+            color: #00cc99; /* Texto verde */
+        }
+
+        /* Enlaces */
+        a {
+            color: #0099cc; /* Texto azul verdoso */
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 0 0 3px rgba(0, 153, 204, 0.8); /* Efecto neón azul verdoso */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px rgba(0, 153, 204, 0.8); /* Efecto neón más intenso */
+        }
+
+        /* Pie de página */
+        footer {
+            background: rgba(26, 26, 26, 0.9); /* Fondo oscuro semi-transparente */
+            color: #0099cc; /* Texto azul verdoso */
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 10px rgba(0, 153, 204, 0.1); /* Sombra azul verdoso */
+            backdrop-filter: blur(10px); /* Efecto de desenfoque */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            text-shadow: 0 0 3px rgba(0, 153, 204, 0.8); /* Efecto neón azul verdoso */
+        }
+
+        /* Precio en tiempo real */
+        #price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #00cc99; /* Texto verde */
+            text-shadow: 0 0 5px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DemocToken (DMC)</h1>
+        <p>Tu token ERC-20 en Binance Smart Chain</p>
+    </header>
+
+    <div class="container">
+        <div class="info">
+            <h2>¿Qué es DemocToken?</h2>
+            <p>
+                DemocToken (DMC) es un token ERC-20 desplegado en Binance Smart Chain (BSC). 
+                Está diseñado para facilitar transacciones, pagos y otros casos de uso en la blockchain.
+            </p>
+
+            <h2>Información Técnica</h2>
+            <ul>
+                <li><strong>Nombre:</strong> DemocToken</li>
+                <li><strong>Símbolo:</strong> DMC</li>
+                <li><strong>Decimales:</strong> 18</li>
+                <li><strong>Suministro Total:</strong> 100,000,000 DMC</li>
+                <li><strong>Blockchain:</strong> Binance Smart Chain (BSC)</li>
+            </ul>
+
+            <h2>Precio en Tiempo Real</h2>
+            <div id="price">Precio actual: $0.00091613 USD</div>
+
+            <h2>Contrato</h2>
+            <p>
+                Puedes ver el contrato de DemocToken en BscScan:
+                <a href="https://bscscan.com/address/0xe41Bf22f0798456EB9739A4903D1371Cae28DF66" target="_blank">Ver en BscScan</a>.
+            </p>
+
+            <h2>Redes Sociales</h2>
+            <p>
+                Síguenos en nuestras redes sociales para más información:
+                <ul>
+                    <li><a href="https://twitter.com/DemoToken" target="_blank">Twitter</a></li>
+                    <li><a href="https://t.me/DemoToken" target="_blank">Telegram</a></li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 DemocToken. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
