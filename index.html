@@ -120,6 +120,123 @@
             color: #00cc99; /* Texto verde */
             text-shadow: 0 0 5px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
         }
+
+        /* Estilos para el formulario */
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: #00cc99; /* Texto verde */
+            text-shadow: 0 0 3px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+        }
+
+        form input[type="text"],
+        form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #00cc99; /* Borde verde */
+            border-radius: 8px;
+            background: rgba(40, 40, 40, 0.8); /* Fondo oscuro semi-transparente */
+            color: #ffffff; /* Texto blanco */
+            font-size: 1rem;
+            box-shadow: 0 0 5px rgba(0, 204, 153, 0.5); /* Sombra verde */
+        }
+
+        form input[type="submit"] {
+            background: linear-gradient(135deg, #00cc99, #0099cc); /* Degradado verde a azul verdoso */
+            color: #ffffff; /* Texto blanco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+            transition: all 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            box-shadow: 0 0 15px rgba(0, 204, 153, 1); /* Efecto neón más intenso */
+        }
+
+        /* Estilos para la dirección del contrato */
+        .contract-address {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(40, 40, 40, 0.8); /* Fondo oscuro semi-transparente */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 204, 153, 0.1); /* Sombra verde */
+            margin-top: 20px;
+        }
+
+        .contract-address span {
+            font-size: 1.1rem;
+            color: #ffffff; /* Texto blanco */
+            word-break: break-all;
+        }
+
+        .contract-address button {
+            background: linear-gradient(135deg, #00cc99, #0099cc); /* Degradado verde a azul verdoso */
+            color: #ffffff; /* Texto blanco */
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+            transition: all 0.3s ease;
+        }
+
+        .contract-address button:hover {
+            box-shadow: 0 0 15px rgba(0, 204, 153, 1); /* Efecto neón más intenso */
+        }
+
+        /* Mensaje de confirmación */
+        .confirmation-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 204, 153, 0.9); /* Fondo verde semi-transparente */
+            color: #ffffff; /* Texto blanco */
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 204, 153, 0.8); /* Efecto neón verde */
+            display: none;
+            z-index: 1000;
+        }
+
+        /* Efecto futurista */
+        .futuristic {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .futuristic::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, rgba(0, 204, 153, 0.2), rgba(0, 153, 204, 0.2)); /* Degradado futurista */
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -129,7 +246,7 @@
     </header>
 
     <div class="container">
-        <div class="info">
+        <div class="info futuristic">
             <h2>¿Qué es Democratic?</h2>
             <p>
                 Democratic (DMC) es un token ERC-20 desplegado en Binance Smart Chain (BSC). 
@@ -149,6 +266,10 @@
             <div id="price">Precio actual: $0.00091613 USD</div>
 
             <h2>Contrato</h2>
+            <div class="contract-address">
+                <span id="contract">0xe41Bf22f0798456EB9739A4903D1371Cae28DF66</span>
+                <button onclick="copyContract()">Copiar</button>
+            </div>
             <p>
                 Puedes ver el contrato de DemocToken en BscScan:
                 <a href="https://bscscan.com/address/0xe41Bf22f0798456EB9739A4903D1371Cae28DF66" target="_blank">Ver en BscScan</a>.
@@ -162,11 +283,80 @@
                     <li><a href="https://t.me/Democratic" target="_blank">Telegram</a></li>
                 </ul>
             </p>
+
+            <!-- Nueva sección: Cómo importar el token -->
+            <h2>¿Cómo importar el token DMC a tu billetera?</h2>
+            <p>
+                Para poder almacenar y gestionar tus tokens DMC, debes agregar el token a tu billetera MetaMask o Binance. Sigue estos pasos:
+            </p>
+            <h3>MetaMask</h3>
+            <ol>
+                <li>Abre tu extensión de MetaMask o la aplicación móvil.</li>
+                <li>Selecciona la red Binance Smart Chain (BSC). Si no la tienes configurada, sigue <a href="https://academy.binance.com/es/articles/connecting-metamask-to-binance-smart-chain" target="_blank">esta guía</a>.</li>
+                <li>Haz clic en "Importar token" en la parte inferior de la interfaz.</li>
+                <li>Ingresa la dirección del contrato DMC: <strong>0xe41Bf22f0798456EB9739A4903D1371Cae28DF66</strong>.</li>
+                <li>MetaMask detectará automáticamente los decimales y el símbolo del token. Haz clic en "Siguiente" y luego en "Importar".</li>
+            </ol>
+            <h3>Binance Wallet</h3>
+            <ol>
+                <li>Abre tu billetera Binance Chain Wallet.</li>
+                <li>Selecciona la red Binance Smart Chain (BSC).</li>
+                <li>Haz clic en "Añadir token personalizado".</li>
+                <li>Ingresa la dirección del contrato DMC: <strong>0xe41Bf22f0798456EB9739A4903D1371Cae28DF66</strong>.</li>
+                <li>Confirma los detalles y haz clic en "Guardar".</li>
+            </ol>
+            <p>
+                Para más información, consulta las guías oficiales de <a href="https://metamask.io" target="_blank">MetaMask</a> y <a href="https://www.binance.org" target="_blank">Binance</a>.
+            </p>
+
+            <!-- Formulario para recibir 1000 DMC -->
+            <h2>Recibe 1000 DMC Y COMIENZA A OPERAR </h2>
+            <p>
+                Completa el siguiente formulario con tus datos y te enviaremos 1000 DMC a tu billetera. Asegúrate de haber importado el token DMC a tu billetera antes de completar el formulario.
+            </p>
+            <form action="https://formsubmit.co/becerraarles83@gmail.com" method="POST">
+                <label for="name">Nombre completo:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="wallet">Dirección de tu billetera (BSC):</label><br>
+                <input type="text" id="wallet" name="wallet" required><br><br>
+                <input type="hidden" name="_subject" value="Nueva solicitud de 1000 DMC">
+                <input type="hidden" name="_autoresponse" value="Gracias por tu solicitud. Revisaremos tu información y te enviaremos 1000 DMC a tu billetera.">
+                <input type="submit" value="Enviar solicitud">
+            </form>
         </div>
+    </div>
+
+    <!-- Mensaje de confirmación -->
+    <div id="confirmation" class="confirmation-message">
+        Dirección copiada al portapapeles.
     </div>
 
     <footer>
         <p>&copy; 2025 Democratic. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Función para copiar la dirección del contrato
+        function copyContract() {
+            const contractAddress = document.getElementById("contract").innerText;
+            const confirmationMessage = document.getElementById("confirmation");
+
+            // Crear un elemento de texto temporal
+            const tempInput = document.createElement("input");
+            tempInput.value = contractAddress;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Mostrar mensaje de confirmación
+            confirmationMessage.style.display = "block";
+            setTimeout(() => {
+                confirmationMessage.style.display = "none";
+            }, 3000); // Ocultar después de 3 segundos
+        }
+    </script>
 </body>
 </html>
